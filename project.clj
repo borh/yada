@@ -1,6 +1,6 @@
 ;; Copyright © 2014-2017, JUXT LTD.
 
-(def VERSION "1.2.1")
+(def VERSION "1.2.6")
 
 (defproject yada/core VERSION
   :description "A powerful Clojure web library, full HTTP, full async"
@@ -18,10 +18,12 @@
    [hiccup "1.0.5"]
    [manifold "0.1.4"]
    [org.clojure/data.codec "0.1.0"]
-   [org.clojure/tools.reader "1.0.0-beta3"]
+   [org.clojure/tools.reader "1.0.0-beta4"]
    [potemkin "0.4.3"]
    [prismatic/schema "1.1.3"]
    [ring/ring-core "1.6.0-beta6"]]
+
+  :global-vars {*warn-on-reflection* true}
 
   :profiles
   {:test
@@ -44,9 +46,9 @@
      [org.webjars/bootstrap "3.3.6"]
 
      ;; ext dependencies
-     [bidi "2.0.16"]
+     [bidi "2.0.17"]
      [aleph "0.4.1" :exclusions [io.aleph/dirigiste]]
-     [org.clojure/core.async "0.2.395"]
+     [org.clojure/core.async "0.3.442"]
      [cheshire "5.6.3"]
      [json-html "0.4.0" :exclusions [hiccups]]
      [buddy/buddy-sign "1.3.0"]
@@ -90,6 +92,8 @@
                     :welcome (println "Type (dev) to start")}
 
      :plugins [[cider/cider-nrepl "0.14.0"]]
+
+     :global-vars {*warn-on-reflection* true}
 
      :dependencies
      [
